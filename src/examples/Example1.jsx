@@ -21,7 +21,7 @@ export default function Example() {
 
     return ( 
         <div>
-            <span>Logged In? {loggedIn} </span>
+            <span style={{fontSize:16}}>Logged In? {loggedIn} </span>
             <button onClick={()=>doLogin()}>
                 {loggedIn == "YES!" ? "Logout" : "Login"}
             </button>
