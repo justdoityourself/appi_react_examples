@@ -22,6 +22,9 @@ export default function Example() {
             case "[status]":
                 _result = await client.Status(0);
                 break;
+            case "[schema]":
+                _result = await client.Get("APPIAPPS.APPIAPP.64KB.TESTAPP.public");
+                break;
             default:
                 _result = await client.Get(id);
                 break;
@@ -40,6 +43,7 @@ export default function Example() {
                 <span style={{color:"lightblue",cursor:"pointer"}} onClick={()=>setId("[user]")}>[user]</span><br/>
                 <span style={{color:"lightblue",cursor:"pointer"}} onClick={()=>setId("[status]")}>[status]</span><br/>
                 <span style={{color:"lightblue",cursor:"pointer"}} onClick={()=>setId("[activity]")}>[activity]</span><br/>
+                <span style={{color:"lightblue",cursor:"pointer"}} onClick={()=>setId("[schema]")}>[schema]</span><br/>
             </p>
             <p style={{fontSize:16,margin:16}}>
                 By default objects can be sourced from the staticfs/ folder. Go ahead and add a json file there and read it. Make sure to set the permission to public like the example: <span style={{color:"lightblue",cursor:"pointer"}} onClick={()=>setId("TESTAPP.HW.64KB.hellostatic.*")}>[TESTAPP.HW.64KB.hellostatic.*]</span> <br/><br/>
@@ -48,10 +52,10 @@ export default function Example() {
                 By default objects can also be sourced from a get request to 127.0.0.1:6991. Go ahead and start a debug web server and requests a resource, it will be fetched once and then integrated into the pipeline. <br/><br/>
             </p>
             <span style={{fontSize:16}}>Read Object</span>
-            <input style={{margin:8,width:256}} placeholder="Object ID" value={id} onChange={evt => setId(evt.target.value)} />
+            <input style={{margin:8,width:'calc(100% - 158px)'}} placeholder="Object ID" value={id} onChange={evt => setId(evt.target.value)} />
             <button onClick={()=>readObject()}>Read</button>
             <br/>
-            <textarea readOnly style={{margin:8,width:412}} rows="10" value={result} />
+            <textarea readOnly style={{margin:8,width:'100%'}} rows="16" value={result} />
         </div> 
     );
 }

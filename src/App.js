@@ -3,6 +3,7 @@ import './App.css';
 
 import Example1 from "./examples/Example1"
 import Example2 from "./examples/Example2"
+import Example3 from "./examples/Example3"
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           Example 1
         </a><span style={{fontSize:24}}> Login / Logout</span>
 
-        <div style={{margin:"32px"}}>
+        <div style={{margin:"96px 32px"}}>
           <Example1 />
         </div>
 
@@ -32,8 +33,20 @@ function App() {
           Example 2
         </a><span style={{fontSize:24}}> Read Objects</span>
 
-        <div style={{margin:"32px"}}>
+        <div style={{margin:"96px 32px",width:600,textAlign:"left"}}>
           <Example2 />
+        </div>
+
+
+        <a style={{fontSize:24}}
+          className="App-link"
+          href=""
+        >
+          Example 3
+        </a><span style={{fontSize:24}}> Write Objects</span>
+
+        <div style={{margin:"96px 32px",width:600,textAlign:"left"}}>
+          <Example3 />
         </div>
       </header>
     </div>
